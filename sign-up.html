@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script src="https://kit.fontawesome.com/b83066dc1c.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/icon-login.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <title>Cadastro - PortMar</title>
+</head>
+
+<body>
+    <section class="signup-area">
+        <div class="signup">
+            <div class="signup-top">
+                <img src="../../img/icon-login.png" alt="">
+                <h1 class="title-signup">Cadastro de Usuários</h1>
+            </div>
+            <form method="post">
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" title="Digite seu Nome" maxlength="50" autofocus>
+                    <label>Nome</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="sobrenome" id="sobrenome" title="Digite seu Sobrenome" maxlength="50">
+                    <label>Sobrenome</label>
+                </div>
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" title="Digite seu E-mail" maxlength="100">
+                    <label>E-mail</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="pswd" id="pswd" minlength="4" maxlength="20"
+                        onkeyup="checkPswd(this.value)" title="Digite sua Senha" required>
+                    <label>Password</label>
+                    <span id="eyeBtn"></span>
+                </div>
+                <div class="validationCheck">
+                    <ul>
+                        <li id="upper">Pelo menos 1 letra maiúscula</li>
+                        <li id="lower">Pelo menos 1 letra minuscula</li>
+                        <li id="number">Pelo menos 1 número</li>
+                        <li id="special">Pelo menos 1 caractere especial</li>
+                        <li id="length">Totalizando pelo menos 8 caracteres</li>
+                    </ul>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="cnfmPswd" id="cnfmPswd" minlength="4" maxlength="20" required>
+                    <label>Confirm Password</label>
+                    <span id="eyeBtn2"></span>
+                </div>
+                <div class="messageCheck">
+                    <p id="messageText"></p>
+                </div>
+                <div class="inputBox">
+                    <button type="submit" name="submit" id="signUp"
+                        onclick="verifyPswd(); rgsUsrVrfPswd();">sign-up</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="../../src/firebase.js"></script>
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>
